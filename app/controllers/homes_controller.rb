@@ -1,4 +1,4 @@
-# The user's dashboard in the app
+# Unauthenticated home screen
 class HomesController < ApplicationController
   def show
     render

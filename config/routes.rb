@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  constraints Clearance::Constraints::SignedIn.new do
+    # I believe there is a bug in this RC release of Rails 6
+    # Where I cannot use the "root" method more than once in routes.rb
+    # So I just manually direct with "get" here
+    get "/", to: "dashboards#show"
+  end
+
   root to: "homes#show"
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, only: [:create]
 
