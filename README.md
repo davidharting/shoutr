@@ -1,24 +1,7 @@
-# README
+# Shoutr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Twitter clone created by following along with [Thoughtbot's intermediate Rails 5 course](Following along with Thoughtbot's intermediate Ruby course https://thoughtbot.com/upcase/intermediate-ruby-on-rails-five).
 
-Things you may want to cover:
+## Motivation
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I want to learn Rails in order to more quickly bring my own product ideas to life as well as to round out my web dev skills.
