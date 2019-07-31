@@ -6,8 +6,4 @@
 <% end %>
 
 <h2>Your shouts</h2>
-<% @shouts.each do |shout| %>
-  <div>
-    <%= shout.body %>
-  </div>
-<% end %>
+<%= render @shouts %>
