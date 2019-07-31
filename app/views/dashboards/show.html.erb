@@ -4,3 +4,10 @@
   <%= form.text_field :body, placeholder: "Let it out!", required: true %>
   <%= form.submit "Shout!" %>
 <% end %>
+
+<h2>Your shouts</h2>
+<% @shouts.each do |shout| %>
+  <div>
+    <%= shout.body %>
+  </div>
+<% end %>
