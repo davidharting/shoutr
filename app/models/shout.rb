@@ -1,7 +1,7 @@
 class Shout < ApplicationRecord
   belongs_to :user
+  belongs_to :content, polymorphic: true
 
-  validates :body, presence: true, length: { in: 1..144 }
   validates :user, presence: true
 
   # This is a bit controversial to use a default scope here

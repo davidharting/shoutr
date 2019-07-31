@@ -2,9 +2,8 @@
     <div>
       <%= link_to shout.username, shout.user %>
       <i><%= time_ago_in_words(shout.created_at) %> ago</i>
+          <%= link_to shout do %>🔗<% end %>
     </div>
-    <%= link_to shout do %>
-      <%= shout.body %>
-    <% end %>
+    <%= render shout.content %>
   </div>
   <br />

@@ -11,7 +11,12 @@ class ShoutsController < ApplicationController
   private
 
   def shout_params
-    params.require(:shout).permit(:body)
+    # He broke this apart into like 4 methods but I personally do not
+    # see the advantage to that
+    content_params = params.require(:shout).require(:content).permit(:body)
+    text_shout = TextShout.new(content_params)
+    params = { :content => text_shout }
+    return params
   end
 
   def redirect_options_for(shout)
