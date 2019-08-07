@@ -12,4 +12,9 @@ module ShoutHelper
       link_to "Like", like_shout_path(shout), method: :post
     end
   end
+
+  def autolink(text)
+    subbed = text.gsub(/@\w*/) { |mention| link_to mention, user_path(mention[1..-1]) }
+    subbed.html_safe
+  end
 end
