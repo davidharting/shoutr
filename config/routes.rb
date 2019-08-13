@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   resource :session, only: [:create]
 
   resources :users, only: [:create, :show] do
-    resource :password,
-      controller: "clearance/passwords",
-      only: [:create, :edit, :update]
+    resources :followers, only: [:index]
+    
+    resource :password, controller: "clearance/passwords", only: [:create, :edit, :update]
     
     member do
       post '/follow' => "followed_users#create"
