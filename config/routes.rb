@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'welcome/show'
   constraints Clearance::Constraints::SignedIn.new do
     # I believe there is a bug in this RC release of Rails 6
     # Where I cannot use the "root" method more than once in routes.rb
@@ -22,6 +23,11 @@ Rails.application.routes.draw do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
+    
+    member do
+      post '/follow' => "followed_users#create"
+      delete '/unfollow' => "followed_users#destroy"
+    end
   end
 
   get "/sign_in" => "sessions#new", as: "sign_in"
