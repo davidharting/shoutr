@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/show'
   constraints Clearance::Constraints::SignedIn.new do
     # I believe there is a bug in this RC release of Rails 6
     # Where I cannot use the "root" method more than once in routes.rb
