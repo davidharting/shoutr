@@ -9,7 +9,14 @@ Rails.application.routes.draw do
 
   root to: "homes#show"
 
-  resources :shouts, only: [:create, :show] do
+  # Handle polymorphism at the route level
+  # Now, the shouts controller knows what kind of shout is being created
+  # And we can handle the differences without a case statement
+  # Using defaults here is nice because (1) They cannot be overridden
+  # and (2) we actually have a handle to the actual model, instead of inferring from a string
+  post "text_shouts" => "shouts#create", defaults: { :content_type => TextShout}
+  post "photo_shouts" => "shouts#create", defaults: { :content_type => PhotoShout}
+  resources :shouts, only: [:show] do
     member do
       post '/like' => "likes#create"
       delete '/unlike' => "likes#destroy"
