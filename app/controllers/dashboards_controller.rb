@@ -1,6 +1,6 @@
 # Authenticated home screen
 class DashboardsController < ApplicationController
   def show
-    @shouts = current_user.timeline_shouts
+    @timeline = Timeline.new(current_user)
   end
 end
