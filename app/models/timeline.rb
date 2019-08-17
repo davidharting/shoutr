@@ -1,18 +1,18 @@
 class Timeline
-  def initialize(user)
-    @user = user
+  include ActiveModel::Conversion # Implements to_partial_path
+
+  def initialize(users, scope = Shout)
+    @users = Array(users) # Handle user or array of users
+    @scope = scope
   end
 
   def shouts
-    Shout.where(user_id: timeline_user_ids)
+    scope
+      .where(user_id: users)
+      .order(created_at: :desc)
   end
 
   private
 
-  attr_reader :user
-
-  # Identify who's shouts should be in the timeline
-  def timeline_user_ids
-    user.followed_user_ids + [user.id]
-  end
+  attr_reader :users, :scope
 end
