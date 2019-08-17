@@ -1,6 +1,6 @@
 # Shoutr
 
-A Twitter clone created by following along with [Thoughtbot's intermediate Rails 5 course](Following along with Thoughtbot's intermediate Ruby course https://thoughtbot.com/upcase/intermediate-ruby-on-rails-five).
+A Twitter clone created by following along with [thoughtbot's intermediate Rails 5 course](https://thoughtbot.com/upcase/intermediate-ruby-on-rails-five).
 
 ## Motivation
 
