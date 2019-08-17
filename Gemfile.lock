@@ -145,6 +145,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     rubocop (0.73.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -222,6 +223,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 6.0.0.rc2)
+  rb-readline
   rubocop-rails_config
   sass-rails (~> 5)
   spring
