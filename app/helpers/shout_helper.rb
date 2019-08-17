@@ -9,6 +9,7 @@ module ShoutHelper
 
   def autolink(text)
     subbed = text.gsub(/@\w*/) { |mention| link_to mention, user_path(mention[1..-1]) }
+    subbed = text.gsub(/#\w*/) { |hashtag| link_to hashtag, hashtag_path(hashtag[1..-1]) }
     subbed.html_safe
   end
 
